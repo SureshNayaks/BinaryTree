@@ -1,0 +1,9 @@
+def next_larger(self):
+    # Case 1:
+    if self.right is not None:
+        return self.right.find_min()
+    # Case 2:
+    current = self
+    while current.parent is not None and current is current.parent.right:
+        current = current.parent
+        return current.parent
